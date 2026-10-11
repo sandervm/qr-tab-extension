@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tab QR</title>
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
+</head>
+<body>
+  <main>
+    <div class="qr-frame" id="qr-frame">
+      <svg id="qr" role="img" aria-label="QR code" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg>
+      <p id="qr-message" class="qr-message" hidden></p>
+    </div>
+
+    <div class="control">
+      <label for="size">Size</label>
+      <select id="size">
+        <option value="192">Small (192 px)</option>
+        <option value="256">Medium (256 px)</option>
+        <option value="320">Large (320 px)</option>
+      </select>
+    </div>
+
+    <section class="url-box" aria-label="Encoded URL">
+      <code id="url-out" class="url-out"></code>
+      <div class="actions">
+        <span id="meta" class="meta"></span>
+        <button type="button" id="copy">Copy URL</button>
+        <button type="button" id="download">Save PNG</button>
+      </div>
+    </section>
+
+    <details id="params">
+      <summary>
+        <svg class="chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="params-summary">Query parameters</span>
+      </summary>
+      <div class="params-body">
+        <label class="toggle-all">
+          <input type="checkbox" id="toggle-all" checked>
+          <span>Toggle all</span>
+        </label>
+        <ul id="param-list" class="param-list"></ul>
+      </div>
+    </details>
+
+    <div class="control">
+      <label for="ecl">Error correction</label>
+      <select id="ecl">
+        <option value="L">Low (7%)</option>
+        <option value="M">Medium (15%)</option>
+        <option value="Q">Quartile (25%)</option>
+        <option value="H">High (30%)</option>
+      </select>
+    </div>
+  </main>
+</body>
+</html>

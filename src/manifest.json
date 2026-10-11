@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Tab QR",
+  "version": "1.0.0",
+  "description": "Show a QR code for the current tab's URL, with adjustable size and per-parameter control over the query string.",
+  "action": {
+    "default_title": "QR code for this tab",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["activeTab", "storage"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tab-qr@example.com",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  }
+}
